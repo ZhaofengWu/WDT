@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>Web 开发技术——Ruby 实现</title>
+    <style type="text/css">
+    	body {
+    		font-family: Helvetica;
+    		margin: 0;
+    	}
+    	#nav {
+    		background-color: grey;
+    		height: 13px;
+    		padding: 13px;
+    		font-size: 15px;
+    		text-align: center;
+
+    	}
+    	#nav > a {
+    		/*margin-top: 10px;*/
+    		color: white;
+    		text-decoration: none;
+    		padding: 5px;
+    	}
+    	#nav > a:hover {
+    		text-decoration: underline;
+    	}
+    	#nav > a:visited {
+    		color: white;
+    	}
+    	#title {
+    		text-align: center;
+    	}
+    	#title > h1 {
+    		font-size: 50px;
+    		margin-top: 50px;
+    		/*margin-bottom: 15px;*/
+    	}
+    	#title > h3 {
+    		margin-top: 15px;
+    		color: gray;
+    		font-weight: 400;
+    		font-family: serif;
+    	}
+    	#intro-container {
+    		margin-bottom: 30px;
+    	}
+    	#intro {
+    		max-width: 60%;
+    		margin: 50px;
+    		margin-top: 25px;
+    		margin-bottom: 30px;
+    	}
+    	#intro > #top-left-block {
+    		float: left;
+    		padding: 7px;
+    		border-left: 5px solid gray;
+    		border-top: 5px solid gray;
+    	}
+    	#intro > #bottom-right-block {
+    		float: right;
+    		margin-top: 85px;
+    		margin-right: 10px;
+    		padding: 7px;
+    		border-right: 5px solid gray;
+    		border-bottom: 5px solid gray;
+    	}
+    	#intro > #text {
+    		padding: 10px 0px 0px 13px;
+    	}
+    	#Ruby-icon{
+    		float: right;
+    		margin-right: 125px;
+    		max-width: 11%;
+    		max-height: 11%;
+    	} 
+    	table
+		{
+			border-collapse:collapse;
+			margin: 40px auto;
+			font-size: 13px;
+			color: #444;
+		}
+    	table, th, td {
+    		border: 2px solid gray;
+    		padding-left: 23px;
+    		padding-right: 23px;
+    		text-align: center;
+    		vertical-align: middle;
+    	}
+    	#content-container {
+    		margin-left: 20px;
+    		margin-right: 20px;
+    	}
+    	#left-col {
+    		float: left;
+    		width: 30%
+    	}
+		#mid-col {
+    		width: 30%;
+    		margin-left: 33%;
+    		margin-right: 33%;
+    	}
+    	#right-col {
+    		float: right;
+    		width: 30%
+    	}
+    	.title {
+    		text-align: center;
+    	}
+    	.upper-section {
+    		margin-bottom: 40px;
+    	}
+    	.upper-section ul {
+    		font-size: 14px;
+    	}
+    	.upper-section ul li ul {
+    		font-size: 12px;
+    		color: dimgrey;
+    		padding-left: 20px;
+    	}
+    	.approaching {
+    		text-align: center;
+    		font-size: 13px;
+    		color: dimgrey;
+    	}
+	</style>
+  </head>
+  <body>
+  	<div id="nav">
+  		<a href="#content_0">准备</a>   |  
+  		<a href="#content_1">Web 基础知识</a>   |  
+  		<a href="#content_2">Ruby</a>   |  
+  		<a href="#content_3">Ruby on Rails</a>   |  
+  		<a href="#content_4">JavaScript: 从前端到后端</a>   |  
+  		<a href="#content_5">Ruby 的其他应用</a>
+  	</div>
+  	<div id="title">
+  		<h1>Web 开发技术——Ruby 实现</h1>
+  		<h3>Web Development Technology</h3>
+  	</div>
+  	<div id="intro-container">
+	  	<img src="http://a4.files.readwrite.com/image/upload/c_fit,cs_srgb,dpr_2.0,q_40,w_460/MTIyMzAxODQyOTQzMTQzMTkz.jpg" id="Ruby-icon">
+  		<div id="intro">
+	  		<div id="top-left-block"> </div>
+	  		<div id="bottom-right-block"> </div>  		
+	  		<div id="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本课程将从实践的角度介绍现代 Web 开发技术，主要包括基本开发工具的使用、Web 前端开发技术（HTML &amp; CSS &amp; Javascript）、后端开发技术（Ruby 实现）。如果时间允许可能会加入部分高级话题，如网络的基本概念、HTTP 协议简介、网络爬虫简介。建议使用 Mac / Linux 系统的学生选修。
+	  		</div>
+	  	</div>
+  	</div>
+  	<table id="info">
+  		<tr>
+  			<th>教师</th>
+  			<th>地点</th>
+  			<th>时间</th>
+  			<th>学分</th>
+  		</tr>
+  		<tr>
+  			<td>刘当一</td>
+  			<td>B203</td>
+  			<td>周二7、8节，周五3、4节</td>
+  			<td>2</td>
+  		</tr>
+  	</table>
+  	<div id="content-container">
+  		<div id="left-col">
+  			<div class="upper-section">
+  				<a name="content_0"></a>
+  				<div class="title"><strong>准备</strong></div>
+  				<ul>
+  					<li>课程介绍与基本命令行操作
+  						<ul>
+  							<li>有关课程的基本介绍，环境的配置，Linux的简介，命令行工具诸命令的使用</li>
+  						</ul>
+  					</li><br />
+  					<li>Git、编辑器与浏览器
+  						<ul>
+  							<li>更多关于命令行工具的介绍，git的介绍与使用，几个典型的编辑器的介绍，浏览器中开发者工具的使用</li>
+  						</ul>
+  					</li>
+  				</ul>
+  			</div>
+  			<div class="lower-section">
+	  			<a name="content_3"></a>
+  				<div class="title"><strong>Ruby on Rails</strong></div>
+  				<br />
+  				<div class="approaching">敬请期待！</div>
+  			</div>  			
+  		</div>
+  		<div id="right-col">
+  			<div class="upper-section">
+	  			<a name="content_2"></a>
+  				<div class="title"><strong>Ruby</strong></div>
+  				<ul>
+  					<li>Ruby编程语言
+  						<ul>
+  							<li>有关编程语言的分类的介绍，Ruby的安装与使用，文档的查阅，基本数据类型，输入输出，数据结构，对象与方法，控制流，面向对象特性，以及其他</li>
+  						</ul>
+  					</li>
+  				</ul>
+  			</div>
+  			<div class="lower-section">
+	  			<a name="content_5"></a>
+  				<div class="title"><strong>Ruby 的其他应用</strong></div>
+  				<br />
+  				<div class="approaching">敬请期待！</div>
+  			</div> 
+  		</div>
+  		<div id="mid-col">
+  			<div class="upper-section">
+	  			<a name="content_1"></a>
+  				<div class="title"><strong>Web 基础知识</strong></div>
+  				<ul>
+  					<li>Network、TCP、IP 协议
+  						<ul>
+  							<li>有关Web、URL结构、C-S架构的介绍，Network及其中各层诸元素的详细介绍，应用命令行工具来实践</li>
+  						</ul>
+  					</li><br />
+  					<li>HTTP协议
+  						<ul>
+  							<li>对于HTTP协议的详细介绍与讨论，包括动词、状态码、请求及响应中Header的键、Cookies、缓存、安全性等等</li>
+  						</ul>
+  					</li><br />
+  					<li>HTML
+  						<ul>
+  							<li>关于用于创建网页的HTML语言的详细介绍，包括结构、元素、属性、标签，以及对于一些标签具体应用的示范</li>
+  						</ul>
+  					</li><br />
+  					<li>CSS
+  						<ul>
+  							<li>关于设计网页样式的CSS语言的详细介绍，覆盖绝大多数需要的知识，包括其使用方式、语法、选择器（包括伪类与伪元素）、颜色、距离单位、盒模型，以及很多常用属性的讲解与应用</li>
+  						</ul>
+  					</li><br />
+  					<li>网页设计专题
+	  					<ul>
+	  						<li>Markup Language的简要介绍，包括XML、JSON等。使用HTML+CSS具体设计网页的方式，一些常用样式与元素的实现方法。Bootstrap框架的简介</li>
+	  					</ul>
+  					</li>
+  				</ul>
+  			</div>
+  			<div class="lower-section">
+	  			<a name="content_4"></a>
+  				<div class="title"><strong>JavaScript: 从前端到后端</strong></div><br />
+  				<div class="approaching">敬请期待！</div>
+  			</div> 
+  		</div>
+  	</div>
+  </body>
+</html>
