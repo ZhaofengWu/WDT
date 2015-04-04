@@ -26,20 +26,21 @@ class WordCount
 
 	def countWordsAppearance(webpageArray)
 		webpageArray.each do |aWebpage|
-			bodyContent = Nokogiri::HTML(aWebpage).xpath("//body")
-			script = bodyContent.css "script"
-			script.each do |aScript|
-			    aScript.content = "" 
+			bodyContent = String.new
+			divNodeSet = Nokogiri::HTML(aWebpage).xpath("//body").xpath("//div").xpath("//*[@id]")
+			divNodeSet.each do |aNode|
+				if aNode.attr("id") == "mw-content-text"
+					bodyContent = aNode.text
+					break
+				end
 			end
 
-			wordsArray =  bodyContent.text.split
+			wordsArray =  bodyContent.split
 			wordsArray.each do |aString|
 				@wordsHash[aString] += 1
 			end
 		end
 	end
-
-
 end
 
 def wikipediaRandomPageGenerator(numberOfPages)
