@@ -1,0 +1,32 @@
+<h3><%= @post.title %></h3>
+
+<p>
+  <!-- <strong>Title:</strong> -->
+  <!-- <%= @post.title %> -->
+  Author: <%= @post.user.email %>
+</p>
+
+<p>
+  <!-- <strong>Body:</strong> -->
+  <%= @post.body %>
+</p>
+
+<div class="pull-right">
+	<%= action_links %>
+</div>
+
+<h1>Reply:</h1>
+<ul>
+	<% replies = @post.replies.page params[:page] %>
+	<% replies.each do |reply| %>
+	<li><%= reply.body %> by <%= reply.user.email %></li>
+	<% end -%>
+</ul>
+
+<%= paginate replies %>
+
+<%= form_for(Reply.new, url: reply_post_path) do |f| %>
+	<%= f.text_area :body %><br /><br />
+	<%= f.submit %>
+<% end -%>
+
